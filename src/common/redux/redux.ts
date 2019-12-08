@@ -1,7 +1,6 @@
 import { Action } from 'redux';
 import { object } from 'prop-types';
-//, U extends (T: T,f: AppAction<T>) => T
-export interface IReducer<T,U> {
+interface IReducer<T,U> {
     [P: string]: (T: T, f: AppAction<U>) => T
 }
 export function createReducer<T,U>(initiaState: T, handlers: IReducer<T,U>) {
